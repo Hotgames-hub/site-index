@@ -1,324 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Summertime Saga - Game Details | HotGames</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-body {
-  background: linear-gradient(135deg, #ffd36b, #fa709a, #fee140);
-  font-family: 'Roboto', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #222;
-}
-.banner {
-  background: #e35d6a;
-  color: #fff;
-  padding: 40px 0 28px 0;
-  text-align: center;
-  font-family: 'Luckiest Guy', cursive, sans-serif;
-  font-size: 2.3em;
-  letter-spacing: 4px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.11);
-  user-select: none;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  left: 0;
-  z-index: 999;
-}
-/* Improved 18+ Icon for better visibility */
-.age-warning {
-  position: fixed;
-  top: 52px;
-  right: 20px;
-  background: #e35d6a;
-  color: white;
-  font-weight: bold;
-  font-family: 'Luckiest Guy', cursive, sans-serif;
-  font-size: 1.3em;
-  border-radius: 50%;
-  width: 52px;
-  height: 52px;
-  line-height: 52px;
-  text-align: center;
-  border: 3px solid white;
-  box-shadow: 0 0 24px 6px #fa709aaa;
-  user-select: none;
-  z-index: 1000;
-  cursor: default;
-}
-.main-content {
-  margin-top: 110px;
-  max-width: 700px;
-  background: rgba(255,255,255,0.98);
-  border-radius: 24px;
-  box-shadow: 0 6px 32px #e35d6a20;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 18px 42px 18px;
-}
-.game-logo-big {
-  margin-top: 16px;
-  margin-bottom: 22px;
-  width: 170px;
-  height: 170px;
-  object-fit: contain;
-  display: block;
-  border-radius: 24px;
-  background: #fffbe9;
-  box-shadow: 0 2px 21px #e35d6a26;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform .19s cubic-bezier(.34,1.3,.42,1.19), box-shadow .19s;
-}
-.game-logo-big:hover {
-  transform: scale(1.13);
-  box-shadow: 0 13px 40px #e35d6a40;
-}
-.game-name {
-  font-size: 2em;
-  font-weight: bold;
-  color: #e35d6a;
-  text-align: center;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-.game-desc {
-  font-size: 1.12em;
-  margin: 14px 0 26px 0;
-  color: #1b1834;
-}
-.section-title {
-  font-size: 1.15em;
-  font-weight: bold;
-  color: #c64c6a;
-  margin-top: 17px;
-  margin-bottom: 7px;
-}
-.game-specs, .sys-req, .platform {
-  background: #fff3e1;
-  border-radius: 12px;
-  padding: 14px 22px;
-  font-size: 1em;
-  color: #a25257;
-  margin-bottom: 12px;
-}
-.platform {
-  background: #faf0d3;
-}
-
-/* ---- Screenshot Frames Container ---- */
-.screenshots-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin: 18px auto 0 auto;
-  max-width: 700px;
-  width: 100%;
-}
-.screenshots-row .screenshot-frame {
-  margin: 0;
-  width: calc(50% - 9px);
-  border-radius: 14px;
-  box-shadow: 0 2px 16px #fa709a33;
-  background: #fbeee0;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid #fad166;
-  min-width: 0;
-}
-.screenshot-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Buttons and Links */
-.download-btn {
-  margin: 36px auto 0 auto;
-  display: block;
-  background: linear-gradient(90deg,#fa709a 50%, #ffe140 100%);
-  color: #fff;
-  font-size: 1.22em;
-  font-weight: bold;
-  padding: 18px 56px;
-  border: none;
-  border-radius: 28px;
-  box-shadow: 0 2px 18px #fa709a33;
-  transition: background .17s;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  width: max-content;
-  letter-spacing: 2px;
-}
-.download-btn:hover {
-  background: linear-gradient(270deg,#fa709a 20%, #ffe140 90%);
-  color: #fffbe9;
-}
-.back-link {
-  display: inline-block;
-  margin-bottom: 30px;
-  color: #e35d6a;
-  font-weight: 700;
-  font-size: 1.08em;
-  text-decoration: none;
-  background: #fff2f2;
-  padding: 8px 22px;
-  border-radius: 14px;
-  transition: background .18s;
-}
-.back-link:hover {
-  background: #fff3e1;
-}
-ul {
-  padding-left: 1.25em;
-}
-
-/* Responsive adjustments */
-@media (max-width: 700px) {
+  body {
+    background: linear-gradient(135deg, #ffd36b, #fa709a, #fee140);
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+  }
+  .banner {
+    background: #e35d6a;
+    color: #fff;
+    padding: 40px 0 28px 0;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 2.3em;
+    letter-spacing: 4px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.11);
+    user-select: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    z-index: 999;
+  }
+  /* Improved 18+ Icon for better visibility */
+  .age-warning {
+    position: fixed;
+    top: 52px;
+    right: 20px;
+    background: #e35d6a;
+    color: white;
+    font-weight: bold;
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+    font-size: 1.3em;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    border: 3px solid white;
+    box-shadow: 0 0 24px 6px #fa709aaa;
+    user-select: none;
+    z-index: 1000;
+    cursor: default;
+  }
   .main-content {
-    padding: 18px 2vw;
+    margin-top: 110px;
+    max-width: 700px;
+    background: rgba(255,255,255,0.98);
+    border-radius: 24px;
+    box-shadow: 0 6px 32px #e35d6a20;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 18px 42px 18px;
   }
   .game-logo-big {
-    width: 110px;
-    height: 110px;
+    margin-top: 16px;
+    margin-bottom: 22px;
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    display: block;
+    border-radius: 24px;
+    background: #fffbe9;
+    box-shadow: 0 2px 21px #e35d6a26;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform .19s cubic-bezier(.34,1.3,.42,1.19), box-shadow .19s;
   }
+  .game-logo-big:hover {
+    transform: scale(1.13);
+    box-shadow: 0 13px 40px #e35d6a40;
+  }
+  .game-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e35d6a;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .game-desc {
+    font-size: 1.12em;
+    margin: 14px 0 26px 0;
+    color: #1b1834;
+  }
+  .section-title {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #c64c6a;
+    margin-top: 17px;
+    margin-bottom: 7px;
+  }
+  .game-specs, .sys-req, .platform {
+    background: #fff3e1;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 1em;
+    color: #a25257;
+    margin-bottom: 12px;
+  }
+  .platform {
+    background: #faf0d3;
+  }
+
+  /* Screenshot Frames Container */
   .screenshots-row {
-    flex-direction: column;
-  }
-  .screenshots-row .screenshot-frame {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 18px auto 0 auto;
+    max-width: 700px;
     width: 100%;
   }
-}
-@media (max-width: 490px) {
-  .banner {
-    font-size: 1.2em;
+  .screenshots-row .screenshot-frame {
+    margin: 0;
+    width: calc(50% - 9px);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px #fa709a33;
+    background: #fbeee0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fad166;
+    min-width: 0;
   }
-  .main-content {
-    margin-top: 80px;
+  .screenshot-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
-  .age-warning {
-    top: 44px;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    font-size: 1em;
+
+  /* Buttons and Links */
+  .download-btn {
+    margin: 36px auto 0 auto;
+    display: block;
+    background: linear-gradient(90deg,#fa709a 50%, #ffe140 100%);
+    color: #fff;
+    font-size: 1.22em;
+    font-weight: bold;
+    padding: 18px 56px;
+    border: none;
+    border-radius: 28px;
+    box-shadow: 0 2px 18px #fa709a33;
+    transition: background .17s;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    width: max-content;
+    letter-spacing: 2px;
   }
-}
+  .download-btn:hover {
+    background: linear-gradient(270deg,#fa709a 20%, #ffe140 90%);
+    color: #fffbe9;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #e35d6a;
+    font-weight: 700;
+    font-size: 1.08em;
+    text-decoration: none;
+    background: #fff2f2;
+    padding: 8px 22px;
+    border-radius: 14px;
+    transition: background .18s;
+  }
+  .back-link:hover {
+    background: #fff3e1;
+  }
+  ul {
+    padding-left: 1.25em;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 700px) {
+    .main-content {
+      padding: 18px 2vw;
+    }
+    .game-logo-big {
+      width: 110px;
+      height: 110px;
+    }
+    .screenshots-row {
+      flex-direction: column;
+    }
+    .screenshots-row .screenshot-frame {
+      width: 100%;
+    }
+  }
+  @media (max-width: 490px) {
+    .banner {
+      font-size: 1.2em;
+    }
+    .main-content {
+      margin-top: 80px;
+    }
+    .age-warning {
+      top: 44px;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 1em;
+    }
+  }
 </style>
 </head>
 <body>
-<div class="banner">HOTGAMES</div>
+  <div class="banner">HOTGAMES</div>
 
-<!-- 18+ age restriction icon -->
-<div class="age-warning" title="18+ Age Restriction">18+</div>
+  <!-- 18+ age restriction icon -->
+  <div class="age-warning" title="18+ Age Restriction">18+</div>
 
-<div class="main-content">
-  <a href="index.html" class="back-link">&larr; Back to Games</a>
-  <img src="summertime.jpg" class="game-logo-big" alt="Summertime Saga Logo">
-  <div class="game-name">Summertime Saga</div>
-  <div class="game-desc">
-    Summertime Saga is a visual novel dating simulation game set in a quirky, cartoon world. Explore a town full of secrets, meet unique characters, and make choices that shape your story.
-  </div>
+  <div class="main-content">
+    <a href="index.html" class="back-link">&larr; Back to Games</a>
+    <img src="summertime.jpg" class="game-logo-big" alt="Summertime Saga Logo" />
+    <div class="game-name">Summertime Saga</div>
+    <div class="game-desc">
+      Summertime Saga is a visual novel dating simulation game set in a quirky, cartoon world. Explore a town full of secrets, meet unique characters, and make choices that shape your story.
+    </div>
 
-  <!-- All 4 screenshots: 2 per row on PC, 1 per row on mobile -->
-  <div class="screenshots-row">
-    <div class="screenshot-frame">
-      <img src="summer1.jpg" alt="Summertime Saga Screenshot 1">
+    <!-- All 4 screenshots: 2 per row on PC, 1 per row on mobile -->
+    <div class="screenshots-row">
+      <div class="screenshot-frame">
+        <img src="summer1.jpg" alt="Summertime Saga Screenshot 1" />
+      </div>
+      <div class="screenshot-frame">
+        <img src="summer2.jpg" alt="Summertime Saga Screenshot 2" />
+      </div>
+      <div class="screenshot-frame">
+        <img src="summer3.jpg" alt="Summertime Saga Screenshot 3" />
+      </div>
+      <div class="screenshot-frame">
+        <img src="summer4.jpg" alt="Summertime Saga Screenshot 4" />
+      </div>
     </div>
-    <div class="screenshot-frame">
-      <img src="summer2.jpg" alt="Summertime Saga Screenshot 2">
-    </div>
-    <div class="screenshot-frame">
-      <img src="summer3.jpg" alt="Summertime Saga Screenshot 3">
-    </div>
-    <div class="screenshot-frame">
-      <img src="summer4.png" alt="Summertime Saga Screenshot 4">
-    </div>
-  </div>
 
-  <div class="section-title">Game Specs</div>
-  <div class="game-specs">
-    <ul>
-      <li>Genre: Visual Novel, Dating Sim, Adventure</li>
-      <li>Multiplayer: No, Single-player</li>
-      <li>Developer: Kompas Productions</li>
-      <li>Size: ~500MB - 1GB (depends on platform)</li>
-      <li>Price: Free (Patreon support optional)</li>
-    </ul>
+    <div class="section-title">Game Specs</div>
+    <div class="game-specs">
+      <ul>
+        <li>Genre: Visual Novel, Dating Sim, Adventure</li>
+        <li>Multiplayer: No, Single-player</li>
+        <li>Developer: Kompas Productions</li>
+        <li>Size: ~500MB - 1GB (depends on platform)</li>
+        <li>Price: Free (Patreon support optional)</li>
+      </ul>
+    </div>
+
+    <div class="section-title">System Requirements</div>
+    <div class="platform">
+      <b>Android</b>
+      <ul>
+        <li>OS: Android 5.0 (Lollipop) or higher</li>
+        <li>RAM: At least 2GB</li>
+        <li>Storage: 500MB free space</li>
+        <li>Processor: Quad-core 1.2 GHz or better</li>
+      </ul>
+      <b>Tips for Android:</b>
+      <ul>
+        <li>Close background apps to free up RAM.</li>
+        <li>Clear cache regularly to optimize performance.</li>
+        <li>Use an SD card if internal storage is limited.</li>
+      </ul>
+    </div>
+
+    <div class="platform">
+      <b>iOS</b>
+      <ul>
+        <li>OS: iOS 10.0 or later</li>
+        <li>Device: iPhone 6s or newer, iPad Air 2 or newer</li>
+        <li>Storage: 500MB free space</li>
+      </ul>
+      <b>Tips for iOS:</b>
+      <ul>
+        <li>Update your device to the latest iOS for best performance.</li>
+        <li>Free up storage by deleting unused apps/files.</li>
+        <li>Enable low power mode to extend battery during gameplay.</li>
+      </ul>
+    </div>
+
+    <div class="platform">
+      <b>Windows</b>
+      <ul>
+        <li>OS: Windows 7, 8, or 10 (64-bit recommended)</li>
+        <li>RAM: At least 4GB</li>
+        <li>Storage: 1GB free space</li>
+        <li>Processor: Intel Core i3 or equivalent</li>
+        <li>Graphics: Integrated or dedicated GPU with at least 1GB VRAM</li>
+      </ul>
+      <b>Tips for Windows:</b>
+      <ul>
+        <li>Update graphics drivers for better performance.</li>
+        <li>Close unnecessary programs to free up resources.</li>
+        <li>Use a cooling pad for laptops to avoid overheating.</li>
+      </ul>
+    </div>
+
+    <div class="platform">
+      <b>Mac</b>
+      <ul>
+        <li>OS: macOS 10.12 (Sierra) or later</li>
+        <li>RAM: At least 4GB</li>
+        <li>Storage: 1GB free space</li>
+        <li>Processor: Intel Core i3 or equivalent</li>
+        <li>Graphics: Integrated/dedicated GPU with at least 1GB VRAM</li>
+      </ul>
+      <b>Tips for Mac:</b>
+      <ul>
+        <li>Keep macOS updated for better compatibility.</li>
+        <li>Use Activity Monitor to close background tasks.</li>
+        <li>Ensure proper ventilation to avoid overheating.</li>
+      </ul>
+    </div>
+
+    <a href="https://summertimesaga.com/download" target="_blank" class="download-btn">⬇️ Download Now</a>
   </div>
-  <div class="section-title">System Requirements</div>
-  <div class="platform">
-    <b>Android</b>
-    <ul>
-      <li>OS: Android 5.0 (Lollipop) or higher</li>
-      <li>RAM: At least 2GB</li>
-      <li>Storage: 500MB free space</li>
-      <li>Processor: Quad-core 1.2 GHz or better</li>
-    </ul>
-    <b>Tips for Android:</b>
-    <ul>
-      <li>Close background apps to free up RAM.</li>
-      <li>Clear cache regularly to optimize performance.</li>
-      <li>Use an SD card if internal storage is limited.</li>
-    </ul>
-  </div>
-  <div class="platform">
-    <b>iOS</b>
-    <ul>
-      <li>OS: iOS 10.0 or later</li>
-      <li>Device: iPhone 6s or newer, iPad Air 2 or newer</li>
-      <li>Storage: 500MB free space</li>
-    </ul>
-    <b>Tips for iOS:</b>
-    <ul>
-      <li>Update your device to the latest iOS for best performance.</li>
-      <li>Free up storage by deleting unused apps/files.</li>
-      <li>Enable low power mode to extend battery during gameplay.</li>
-    </ul>
-  </div>
-  <div class="platform">
-    <b>Windows</b>
-    <ul>
-      <li>OS: Windows 7, 8, or 10 (64-bit recommended)</li>
-      <li>RAM: At least 4GB</li>
-      <li>Storage: 1GB free space</li>
-      <li>Processor: Intel Core i3 or equivalent</li>
-      <li>Graphics: Integrated or dedicated GPU with at least 1GB VRAM</li>
-    </ul>
-    <b>Tips for Windows:</b>
-    <ul>
-      <li>Update graphics drivers for better performance.</li>
-      <li>Close unnecessary programs to free up resources.</li>
-      <li>Use a cooling pad for laptops to avoid overheating.</li>
-    </ul>
-  </div>
-  <div class="platform">
-    <b>Mac</b>
-    <ul>
-      <li>OS: macOS 10.12 (Sierra) or later</li>
-      <li>RAM: At least 4GB</li>
-      <li>Storage: 1GB free space</li>
-      <li>Processor: Intel Core i3 or equivalent</li>
-      <li>Graphics: Integrated/dedicated GPU with at least 1GB VRAM</li>
-    </ul>
-    <b>Tips for Mac:</b>
-    <ul>
-      <li>Keep macOS updated for better compatibility.</li>
-      <li>Use Activity Monitor to close background tasks.</li>
-      <li>Ensure proper ventilation to avoid overheating.</li>
-    </ul>
-  </div>
-  <a href="https://summertimesaga.com/download" class="download-btn" target="_blank">⬇️ Download Now</a>
-</div>
 </body>
 </html>
