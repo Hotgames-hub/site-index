@@ -110,8 +110,18 @@ body {
   background: #faf0d3;
 }
 
-/* ---- Common Screenshot Frame ---- */
-.screenshot-frame {
+/* ---- Screenshot Frames Container ---- */
+.screenshots-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 18px auto 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+.screenshots-row .screenshot-frame {
+  margin: 0;
+  width: calc(50% - 9px); /* 50% width minus half the gap */
   border-radius: 14px;
   box-shadow: 0 2px 16px #fa709a33;
   background: #fbeee0;
@@ -121,9 +131,6 @@ body {
   align-items: center;
   justify-content: center;
   border: 3px solid #fad166;
-  margin: 18px auto 0 auto;
-  width: 100%;
-  max-width: 650px;
   min-width: 0;
 }
 .screenshot-frame img {
@@ -131,19 +138,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* ---- New container for two images side-by-side on PC and stacked on mobile ---- */
-.screenshots-row {
-  display: flex;
-  gap: 18px;
-  margin: 18px auto 0 auto;
-  max-width: 700px;
-  width: 100%;
-}
-.screenshots-row .screenshot-frame {
-  margin: 0; /* Override margin to handle inside flex */
-  width: 50%;
 }
 
 /* Buttons and Links */
@@ -235,16 +229,14 @@ ul {
     Summertime Saga is a visual novel dating simulation game set in a quirky, cartoon world. Explore a town full of secrets, meet unique characters, and make choices that shape your story.
   </div>
 
-  <!-- First two screenshots, one per row -->
-  <div class="screenshot-frame">
-    <img src="summer1.jpg" alt="Summertime Saga Screenshot 1">
-  </div>
-  <div class="screenshot-frame">
-    <img src="summer2.jpg" alt="Summertime Saga Screenshot 2">
-  </div>
-
-  <!-- New pair of screenshots in a row on PC, stacked on mobile -->
+  <!-- All 4 screenshots in a single container for 2 per row -->
   <div class="screenshots-row">
+    <div class="screenshot-frame">
+      <img src="summer1.jpg" alt="Summertime Saga Screenshot 1">
+    </div>
+    <div class="screenshot-frame">
+      <img src="summer2.jpg" alt="Summertime Saga Screenshot 2">
+    </div>
     <div class="screenshot-frame">
       <img src="summer3.jpg" alt="Summertime Saga Screenshot 3">
     </div>
