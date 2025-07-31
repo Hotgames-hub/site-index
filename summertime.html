@@ -30,10 +30,10 @@ body {
   left: 0;
   z-index: 999;
 }
-/* 18+ Icon Styling */
+/* Improved 18+ Icon for better visibility */
 .age-warning {
   position: fixed;
-  top: 52px; /* just below banner's padding */
+  top: 52px;
   right: 20px;
   background: #e35d6a;
   color: white;
@@ -45,7 +45,8 @@ body {
   height: 52px;
   line-height: 52px;
   text-align: center;
-  box-shadow: 0 0 18px 4px #fa709a88;
+  border: 3px solid white;
+  box-shadow: 0 0 24px 6px #fa709aaa;
   user-select: none;
   z-index: 1000;
   cursor: default;
@@ -121,7 +122,7 @@ body {
 }
 .screenshots-row .screenshot-frame {
   margin: 0;
-  width: calc(50% - 9px); /* 50% width minus half the gap */
+  width: calc(50% - 9px);
   border-radius: 14px;
   box-shadow: 0 2px 16px #fa709a33;
   background: #fbeee0;
@@ -206,7 +207,7 @@ ul {
     margin-top: 80px;
   }
   .age-warning {
-    top: 44px; /* adjust for smaller banner */
+    top: 44px;
     width: 44px;
     height: 44px;
     line-height: 44px;
@@ -229,7 +230,7 @@ ul {
     Summertime Saga is a visual novel dating simulation game set in a quirky, cartoon world. Explore a town full of secrets, meet unique characters, and make choices that shape your story.
   </div>
 
-  <!-- All 4 screenshots in a single container for 2 per row -->
+  <!-- All 4 screenshots: 2 per row on PC, 1 per row on mobile -->
   <div class="screenshots-row">
     <div class="screenshot-frame">
       <img src="summer1.jpg" alt="Summertime Saga Screenshot 1">
