@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOT GAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts for Pixel and Sci-Fi Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            background: linear-gradient(115deg, #0f1015 0%, #221654 100%);
+        }
+        body {
+            font-family: 'Orbitron', 'Press Start 2P', monospace, Arial, sans-serif;
+        }
+        .topbar {
+            background: linear-gradient(90deg, #190A2C 0%, #2F006C 50%, #B908F7 100%);
+            color: #00FFE7;
+            padding: 18px 5vw;
+            font-size: 1.5rem;
+            font-family: 'Press Start 2P', monospace, Arial, sans-serif;
+            text-shadow: 0 0 7px #0fffd8, 0 0 18px #0fffd8;
+            box-shadow: 0 5px 24px 0 #35007799;
+            display: flex;
+            align-items: center;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #FC2EFF;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+        .brand-circle {
+            background: #3a0172cc;
+            border: 2.5px solid #29FFFC;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 1.5em;
+            color: #FC2EFF;
+            box-shadow: 0 0 12px #fc2eff55, 0 0 7px #29fffccc;
+            flex-shrink: 0;
+        }
+        .content {
+            max-width: 1320px;
+            margin: 40px auto 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            padding: 0 2vw 40px 2vw;
+        }
+        .video-tile {
+            background: #181226;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 32px 0 #9000ff30;
+            border: 2.5px solid transparent;
+            position: relative;
+            width: 348px;
+            cursor: pointer;
+            transition: transform 0.17s, box-shadow 0.17s, border 0.18s;
+            max-width: 100vw;
+        }
+        .video-tile:before {
+            content: "";
+            display: block;
+            position: absolute;
+            inset: 0;
+            border-radius: 18px;
+            z-index: 1;
+            pointer-events: none;
+            box-shadow: 0 0 18px 0 #00ffe7cc, 0 0 12px 0 #fc2eff77, 0 0 0 8px #0000;
+            opacity: 0;
+            transition: opacity 0.27s;
+        }
+        .video-tile:hover, .video-tile:focus-within {
+            transform: translateY(-10px) scale(1.035);
+            border: 2.5px solid #FC2EFF;
+            box-shadow: 0 18px 58px #3a0172cc, 0 0 24px #29FFFC;
+        }
+        .video-tile:hover:before, .video-tile:focus-within:before {
+            opacity: 1;
+        }
+        .thumb-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .thumb-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #24243e;
+            box-shadow: 0 1.6px 18px #29fffc33;
+            transition: filter 0.23s, box-shadow 0.18s;
+        }
+        .video-tile:hover .thumb-img, .video-tile:focus-within .thumb-img {
+            filter: brightness(106%) saturate(1.24) blur(0.2px);
+            box-shadow: 0 0 18px #FC2EFF99, 0 0 24px #49FFFC99;
+        }
+        .tile-info {
+            padding: 15px 14px 11px 14px;
+            position: relative;
+            z-index: 2;
+        }
+        .video-title {
+            font-size: 1.02rem;
+            font-family: 'Orbitron', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #00FFE7;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px #0FFFD860;
+        }
+        .video-meta {
+            font-size: 0.96rem;
+            font-family: 'Press Start 2P', monospace, Arial, sans-serif;
+            color: #FC2EFF;
+            margin-bottom: 9px;
+            text-shadow: 0 0 12px #fc2eff99;
+        }
+        .desc {
+            font-size: 0.93rem;
+            color: #bbbbdd;
+            font-family: 'Orbitron', Arial, sans-serif;
+        }
+        .badge {
+            display: inline-block;
+            margin-top: 2px;
+            padding: 2px 10px 2px 9px;
+            border-radius: 7px;
+            font-size: 0.8em;
+            background: linear-gradient(95deg,#29fffc 10%,#fc2eff 90%);
+            color: #130732;
+            font-family: 'Press Start 2P', monospace, Arial, sans-serif;
+            box-shadow: 0 0 10px #2ffbfc80;
+            letter-spacing: 0.2px;
+        }
+        /* Enhanced Responsive Design */
+        @media (max-width: 900px) {
+            .content {
+                gap: 18px;
+            }
+            .video-tile {
+                width: 90vw;
+                max-width: 95vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .topbar {
+                font-size: 0.92rem;
+                padding: 12px 3vw;
+            }
+            .brand-circle {
+                width: 32px;
+                height: 32px;
+                font-size: 1em;
+                margin-right: 10px;
+            }
+            .content {
+                justify-content: center;
+                padding: 0 1vw 32px 1vw;
+                gap: 11px;
+            }
+            .video-tile {
+                width: 99vw;
+                max-width: 99vw;
+                border-radius: 11px;
+            }
+            .thumb-img {
+                height: 128px;
+            }
+            .tile-info {
+                padding: 12px 9px 8px 9px;
+            }
+            .badge {
+                font-size: 0.68em;
+                padding: 2px 7px;
+            }
+            .video-title {
+                font-size: 0.97rem;
+            }
+            .desc {
+                font-size: 0.88rem;
+            }
+            .video-meta {
+                font-size: 0.78rem;
+                margin-bottom: 6px;
+            }
+        }
+        /* For touch accessibility */
+        .thumb-link, .video-tile {
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="brand-circle">🎮</div>
+        HOT GAMES
+    </div>
+    <div class="content">
+        <div class="video-tile" tabindex="0">
+            <a href="video.html" class="thumb-link">
+                <img class="thumb-img" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=400&q=80" alt="Cyber Arena Battle">
+                <div class="tile-info">
+                    <div class="video-title">Cyber Arena Battle</div>
+                    <div class="video-meta">2.9M views • 1 week ago</div>
+                    <span class="badge">E-SPORT</span>
+                    <div class="desc">Watch top players compete in neon-lit cyber arenas with legendary gaming moves.</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-tile" tabindex="0">
+            <a href="video.html" class="thumb-link">
+                <img class="thumb-img" src="https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=400&q=80" alt="Retro Pixel Quest">
+                <div class="tile-info">
+                    <div class="video-title">Retro Pixel Quest</div>
+                    <div class="video-meta">828K views • 4 days ago</div>
+                    <span class="badge">RETRO</span>
+                    <div class="desc">A nostalgic adventure: pixel dungeons, epic chiptunes, and classic quests reborn!</div>
+                </div>
+            </a>
+        </div>
+        <div class="video-tile" tabindex="0">
+            <a href="video.html" class="thumb-link">
+                <img class="thumb-img" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Open World Survival">
+                <div class="tile-info">
+                    <div class="video-title">Open World Survival</div>
+                    <div class="video-meta">1.7M views • 12 hours ago</div>
+                    <span class="badge">ADVENTURE</span>
+                    <div class="desc">Explore vast gaming worlds and uncover secrets in this survival saga.</div>
+                </div>
+            </a>
+        </div>
+        <!-- Add more tiles as needed for your game/video collection! -->
+    </div>
+</body>
+</html>
